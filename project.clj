@@ -42,7 +42,7 @@
               :builds [{:id "devcards"
                         :source-paths ["src"]
                         :figwheel { :devcards true
-                                    :websocket-url "ws://192.168.2.233:3449/figwheel-ws"
+                                   :websocket-url "ws://192.168.2.45:3449/figwheel-ws"
                                    ;; <- note this
                                    ;; :open-urls will pop open your application
                                    ;; in the default browser once Figwheel has
@@ -70,7 +70,7 @@
                                    :optimizations :advanced}}]}
 
   :figwheel {
-             :server-ip "192.168.2.233"
+             :server-ip "192.168.2.45"
              :css-dirs ["resources/public/css"]
                }
 

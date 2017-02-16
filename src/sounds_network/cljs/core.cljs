@@ -13,13 +13,16 @@
    [devcards.core :as dc :refer [defcard deftest]]
    [cljs.core.async.macros :refer [go alt!]]))
 
+;;install devtools and cljs support for chrome
 (dirac.runtime/install!)
 (devtools/install!)
 
 (enable-console-print!)
 
+;;make a request to listen for new events on the server
 (defonce es (js/EventSource. "/new-users"))
 
+;;just print them out could swap into an atom and visualize with html component
 (.addEventListener es "message" (fn [e] (js/console.log
                                          (:korean-person/surname (cljs.reader/read-string (.-data e))))))
 
